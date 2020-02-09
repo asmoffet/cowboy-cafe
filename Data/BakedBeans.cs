@@ -2,9 +2,9 @@
 
 * Author: Alex Moffet
 
-* Class name: ChiliCheeseFries
+* Class name: BakedBeans
 
-* Purpose: store and access prperties for Chili Cheese Fries
+* Purpose: store and access prperties for Baked Beans
 
 */
 using System;
@@ -13,10 +13,10 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries: Side
+    public class BakedBeans: Side
     {
         /// <summary>
-        /// returns the calories for small medium and large chili cheese fries
+        /// allows the override for the calories in baked beans dependant on size
         /// </summary>
         public override uint Calories
         {
@@ -25,18 +25,18 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 410;
                     case Size.Medium:
-                        return 524;
+                        return 378;
                     case Size.Small:
-                        return 433;
+                        return 312;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }
             }
         }
         /// <summary>
-        /// returns the price for small medium and large chili cheese fries
+        /// allows for the override of price for baked beans dependant on size
         /// </summary>
         public override double Price
         {
@@ -45,11 +45,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }

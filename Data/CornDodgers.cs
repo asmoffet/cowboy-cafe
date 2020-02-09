@@ -2,9 +2,9 @@
 
 * Author: Alex Moffet
 
-* Class name: ChiliCheeseFries
+* Class name: CornDodgers
 
-* Purpose: store and access prperties for Chili Cheese Fries
+* Purpose: store and access prperties for Corn Dodgers
 
 */
 using System;
@@ -13,30 +13,30 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries: Side
+    public class CornDodgers: Side
     {
-        /// <summary>
-        /// returns the calories for small medium and large chili cheese fries
-        /// </summary>
         public override uint Calories
         {
+            /// <summary>
+            /// allows the override for the calories in Corn Dodgers dependant on size
+            /// </summary>
             get
             {
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 717;
                     case Size.Medium:
-                        return 524;
+                        return 685;
                     case Size.Small:
-                        return 433;
+                        return 512;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }
             }
         }
         /// <summary>
-        /// returns the price for small medium and large chili cheese fries
+        /// allows the override for the price in Corn DOdgers dependant on size
         /// </summary>
         public override double Price
         {
@@ -45,11 +45,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }

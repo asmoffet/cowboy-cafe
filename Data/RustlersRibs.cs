@@ -1,15 +1,24 @@
-﻿using System;
+﻿/*
+
+* Author: Alex Moffet
+
+* Class name: RustlersRibs
+
+* Purpose: store and access prperties for Rustlers Ribs
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class RustlersRibs
+    public class RustlersRibs: Entree
     {
         /// <summary>
         /// returns the price of th Rustler's Ribs
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -19,7 +28,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// returns the calories for the Rustler' Ribs
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -29,7 +38,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the Rustler's Ribs
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

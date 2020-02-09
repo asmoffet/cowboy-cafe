@@ -2,9 +2,9 @@
 
 * Author: Alex Moffet
 
-* Class name: ChiliCheeseFries
+* Class name: PanDeCampo
 
-* Purpose: store and access prperties for Chili Cheese Fries
+* Purpose: store and access prperties for Pan de Campo
 
 */
 using System;
@@ -13,10 +13,10 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries: Side
+    public class PanDeCampo: Side
     {
         /// <summary>
-        /// returns the calories for small medium and large chili cheese fries
+        /// returns the calories for Pand de Campo
         /// </summary>
         public override uint Calories
         {
@@ -25,18 +25,18 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 367;
                     case Size.Medium:
-                        return 524;
+                        return 269;
                     case Size.Small:
-                        return 433;
+                        return 227;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }
             }
         }
         /// <summary>
-        /// returns the price for small medium and large chili cheese fries
+        /// returns the price for Pand de Campo
         /// </summary>
         public override double Price
         {
@@ -45,11 +45,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }

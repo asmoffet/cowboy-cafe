@@ -1,10 +1,19 @@
-﻿using System;
+﻿/*
+
+* Author: Alex Moffet
+
+* Class name: TrailBurger
+
+* Purpose: store and access prperties for Trail Burger
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger
+    public class TrailBurger: Entree
     {
         private bool bun = true;
         /// <summary>
@@ -84,7 +93,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// the calories of a Trailburger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -94,7 +103,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// the price of a Trailbuger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -104,7 +113,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the Trailer Burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+
+* Author: Nathan Bean
+
+* Edited by: Alex Moffet
+
+* Class name: CowpokeChili
+
+* Purpose: store and access common prperties for sides
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +21,7 @@ namespace CowboyCafe.Data
     public abstract class Side
     {
         /// <summary>
-        /// Gets the size of the entree
+        /// Gets the size of the side
         /// </summary>
         public virtual Size Size { get; set; }
 
@@ -20,7 +31,7 @@ namespace CowboyCafe.Data
         public abstract double Price { get; }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the side
         /// </summary>
         public abstract uint Calories { get; }
     }

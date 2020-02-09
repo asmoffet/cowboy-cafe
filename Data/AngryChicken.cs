@@ -1,10 +1,19 @@
-﻿using System;
+﻿/*
+
+* Author: Alex Moffet
+
+* Class name: AngryChicken
+
+* Purpose: store and access prperties for Angry Chicken
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken
+    public class AngryChicken: Entree
     {
         private bool bread = true;
         /// <summary>
@@ -39,7 +48,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// the calories of the chicken
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -49,7 +58,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// the price of the chicken
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -59,7 +68,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the Angry Chicken
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
