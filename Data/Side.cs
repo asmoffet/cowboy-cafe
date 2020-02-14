@@ -4,7 +4,7 @@
 
 * Edited by: Alex Moffet
 
-* Class name: CowpokeChili
+* Class name: Side
 
 * Purpose: store and access common prperties for sides
 
