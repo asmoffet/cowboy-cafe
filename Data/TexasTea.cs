@@ -87,19 +87,21 @@ namespace CowboyCafe.Data
             {
                 switch (Size)
                 {
-                    case Size.Large && Sweet:
-                        return 36;
-                    case Size.Medium && Sweet:
-                        return 22;
-                    case Size.Small && Sweet:
-                        return 10;
-
-                    case Size.Large && !Sweet:
-                        return 18;
-                    case Size.Medium && !Sweet:
-                        return 11;
-                    case Size.Small && !Sweet:
-                        return 5;
+                    case Size.Large:
+                        if (Sweet == true)
+                            return 36;
+                        else
+                            return 18;
+                    case Size.Medium:
+                        if (Sweet == true)
+                            return 22;
+                        else
+                            return 11;
+                    case Size.Small:
+                        if (Sweet == true)
+                            return 10;
+                        else
+                            return 5;
 
                     default:
                         throw new NotImplementedException("Unknown Size.");
@@ -123,6 +125,7 @@ namespace CowboyCafe.Data
                 {
                     instructions.Add("Add Lemon");
                 }
+                return instructions;
             }
         }
     }

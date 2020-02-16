@@ -101,6 +101,7 @@ namespace CowboyCafe.Data
                 {
                     instructions.Add("Room for Cream");
                 }
+                return instructions;
             }
         }
     }

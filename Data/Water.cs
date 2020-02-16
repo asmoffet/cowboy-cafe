@@ -81,6 +81,7 @@ namespace CowboyCafe.Data
                 {
                     instructions.Add("Add Lemon");
                 }
+                return instructions;
             }
         }
     }

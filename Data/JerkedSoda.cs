@@ -83,6 +83,7 @@ namespace CowboyCafe.Data
                 {
                     instructions.Add("Hold Ice");
                 }
+                return instructions;
             }
         }
     }

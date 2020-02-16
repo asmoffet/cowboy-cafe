@@ -41,10 +41,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract bool Ice
         {
-            get
-            {
-                return true;
-            }
+            get; set;
         }
 
     }
