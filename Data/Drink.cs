@@ -30,19 +30,12 @@ namespace CowboyCafe.Data
         /// Gets the calories of the drink
         /// </summary>
         public abstract uint Calories { get; }
-        public virtual Size Size {
-            get
-            {
-                return Size.Small;
-            }
-        }
+        public virtual Size Size { get; set; }
+        
         /// <summary>
         /// gets whether the drink has ice or not
         /// </summary>
-        public abstract bool Ice
-        {
-            get; set;
-        }
+        public abstract bool Ice {get; set;}
 
     }
 }

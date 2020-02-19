@@ -224,7 +224,7 @@ namespace CowboyCafe.Data
         /// <returns>The String "Texas Triple Burger"</returns>
         public override string ToString()
         {
-            return "Texas Triple Bruger";
+            return "Texas Triple Burger";
         }
     }
 }

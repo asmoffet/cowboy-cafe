@@ -16,8 +16,8 @@ namespace CowboyCafe.Data
     public enum SodaFlavor
     {
         CreamSoda,
-        OrangSoda,
-        Sarsaparilla,
+        OrangeSoda,
+        Sarsparilla,
         BirchBeer,
         RootBeer
     }

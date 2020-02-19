@@ -136,11 +136,11 @@ namespace CowboyCafe.Data
         {
             if (Sweet)
             {
-                return Size.ToString() + " Sweet Texas Tea";
+                return Size.ToString() + " Texas Sweet Tea";
             }
             else
             {
-                return Size.ToString() + " Texas Tea";
+                return Size.ToString() + " Texas Plain Tea";
             }
             
         }

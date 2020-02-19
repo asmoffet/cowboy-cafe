@@ -31,6 +31,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whether there is Ice or not
         /// </summary>
+        
         public override bool Ice
         {
             get
@@ -42,15 +43,16 @@ namespace CowboyCafe.Data
                 Ice = value;
             }
         }
+        private bool decaf = false;
         public bool Decaf
         {
             get
             {
-                return false;
+                return decaf;
             }
             set
             {
-                Decaf = value;
+                decaf = value;
             }
         }
         /// <summary>
@@ -120,7 +122,7 @@ namespace CowboyCafe.Data
         /// <returns>The String "Cowboy Coffee"</returns>
         public override string ToString()
         {
-            if (Decaf)
+            if (Decaf == true)
             {
                 return Size.ToString() + " Decaf Cowboy Coffee";
             }

@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Alex Moffet
+
+* Class name: OrderControl
+
+* Purpose: The User's Interface
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
