@@ -86,5 +86,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Jerked Soda"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " " + Flavor.ToString() + " " + " Jerked Soda";
+        }
     }
 }

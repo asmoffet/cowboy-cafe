@@ -82,5 +82,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Angry Chicken"</returns>
+        public override string ToString()
+        {
+            return "Angry Chicken";
+        }
     }
 }

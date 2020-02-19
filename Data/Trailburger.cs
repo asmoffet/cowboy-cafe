@@ -133,5 +133,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Trail Burger"</returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
     }
 }

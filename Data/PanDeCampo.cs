@@ -55,5 +55,13 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Pan De Campo"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Pan De Campo";
+        }
     }
 }

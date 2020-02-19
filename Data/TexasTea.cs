@@ -128,5 +128,21 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Texas Tea"</returns>
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return Size.ToString() + " Sweet Texas Tea";
+            }
+            else
+            {
+                return Size.ToString() + " Texas Tea";
+            }
+            
+        }
     }
 }

@@ -42,7 +42,17 @@ namespace CowboyCafe.Data
                 Ice = value;
             }
         }
-
+        public bool Decaf
+        {
+            get
+            {
+                return false;
+            }
+            set
+            {
+                Decaf = value;
+            }
+        }
         /// <summary>
         /// gets the price of the drink
         /// </summary>
@@ -103,6 +113,22 @@ namespace CowboyCafe.Data
                 }
                 return instructions;
             }
+        }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Cowboy Coffee"</returns>
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return Size.ToString() + " Decaf Cowboy Coffee";
+            }
+            else
+            {
+                return Size.ToString() + " Cowboy Coffee";
+            }
+
         }
     }
 }

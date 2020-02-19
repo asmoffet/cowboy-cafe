@@ -55,5 +55,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Rustler's Ribs"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Baked Beans";
+           
+        }
     }
 }

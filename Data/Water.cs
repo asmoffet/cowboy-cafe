@@ -84,5 +84,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// converts object to a string
+        /// </summary>
+        /// <returns>The String "Water"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Water";
+        }
     }
 }
