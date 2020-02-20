@@ -18,29 +18,31 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whether the user wants Ice
         /// </summary>
+        private bool ice = false;
         public override bool Ice
         {
             get
             {
-                return Ice;
+                return ice;
             }
             set
             {
-                Ice = value;
+                ice = value;
             }
         }
         /// <summary>
         /// gets whether the user wants lemon
         /// </summary>
+        private bool lemon = false;
         public bool Lemon
         {
             get
             {
-                return false;
+                return lemon;
             }
             set
             {
-                Lemon = value;
+                lemon = value;
             }
         }
 

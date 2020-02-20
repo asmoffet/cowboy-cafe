@@ -18,29 +18,30 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whethre there needs to be room for cream
         /// </summary>
+        private bool roomForCream = false;
         public bool RoomForCream {
             get
             {
-                return false;
+                return roomForCream;
             }
             set
             {
-                RoomForCream = value;
+                roomForCream = value;
             }
         }
         /// <summary>
         /// gets whether there is Ice or not
         /// </summary>
-        
+        private bool ice = false;
         public override bool Ice
         {
             get
             {
-                return false;
+                return ice;
             }
             set
             {
-                Ice = value;
+                ice = value;
             }
         }
         private bool decaf = false;

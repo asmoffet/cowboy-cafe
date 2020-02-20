@@ -18,15 +18,16 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whether the user wants Ice or not
         /// </summary>
+        private bool ice = false;
         public override bool Ice
         {
             get
             {
-                return Ice;
+                return ice;
             }
             set
             {
-                Ice = value;
+                ice = value;
             }
         }
         /// <summary>
@@ -92,7 +93,23 @@ namespace CowboyCafe.Data
         /// <returns>The String "Jerked Soda"</returns>
         public override string ToString()
         {
-            return Size.ToString() + " " + Flavor.ToString() + " " + " Jerked Soda";
+            switch (this.Flavor)
+            {
+                case SodaFlavor.BirchBeer:
+                    return Size.ToString() +" Birch Beer Jerked Soda";
+                case SodaFlavor.CreamSoda:
+                    return Size.ToString() + " Cream Soda Jerked Soda";
+                case SodaFlavor.OrangeSoda:
+                    return Size.ToString() + " Orange Soda Jerked Soda";
+                case SodaFlavor.RootBeer:
+                    return Size.ToString() + " Root Beer Jerked Soda";
+                case SodaFlavor.Sarsparilla:
+                    return Size.ToString() + " Sarsparilla Jerked Soda";
+                default:
+                    return Size.ToString() + " Cream Soda Jerked Soda";
+            }
+                
+
         }
     }
 }
