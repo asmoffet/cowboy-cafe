@@ -12,7 +12,7 @@ namespace CowboyCafe.DataTests
         {
             public double Price { get; set; }
 
-            public List<string> specialInstructions { get; set; }
+            public List<string> SpecialInstructions { get; set; }
         }
         [Fact]
         public void ShouldBeAbleToAddItems()
@@ -98,6 +98,18 @@ namespace CowboyCafe.DataTests
             {
                 order.Remove(item);
             });
+        }
+
+        [Fact]
+        public void TestingRandomNumber()
+        {
+            var order = new Order();
+            var oldOrder = new Order();
+            var olderOrder = new Order();
+            Assert.NotEqual(order.OrderNumber, oldOrder.OrderNumber);
+            Assert.NotEqual(order.OrderNumber, olderOrder.OrderNumber);
+            Assert.NotEqual(olderOrder.OrderNumber, oldOrder.OrderNumber);
+
         }
 
     }

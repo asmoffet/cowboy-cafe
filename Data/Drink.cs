@@ -13,9 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace CowboyCafe.Data
 {
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// gets any special instructions
