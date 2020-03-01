@@ -7,9 +7,46 @@
              mc:Ignorable="d" 
              d:DesignHeight="473" d:DesignWidth="250">
     <Grid>
-        <TextBlock TextAlignment="Center">Order</TextBlock>
-        <ListBox Name ="OrderList"/>
-        
-        <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center">Order</TextBlock>
+            <ListBox Name ="OrderList" Width="200" HorizontalAlignment="Left"/>
+            <ListBox Name ="OrderCost" Width="50" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-4"/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <TextBox Text="Subtotal" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="431"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="413"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+        </StackPanel>
+
+
+
     </Grid>
 </UserControl>
