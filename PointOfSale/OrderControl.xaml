@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="550">
+             d:DesignHeight="500" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="59.67"/>
@@ -19,9 +19,11 @@
             </ColumnDefinition>
             <ColumnDefinition>
             </ColumnDefinition>
-
+            <ColumnDefinition Width="250">
+            </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel>
+            <Button Name="ItemSelection" Click="ItemSelection_Click">Item Selection</Button>
             <TextBlock TextAlignment="Center">Entree</TextBlock>
             <Button Name="AddAngryChickenButton" Click="AddAngryChickenButton_Click">Angry Chicken</Button>
             <Button Name="AddCowpokeChilliButton" Click="AddCowpokeChilliButton_Click">Cowpoke Chilli</Button>
@@ -32,6 +34,7 @@
             <Button Name="AddTrailBurgeButton" Click="AddTrailBurgeButton_Click">TrailBurger</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
+            <Button Name="CancelOrder" Click="CancelOrder_Click">Cancel Order</Button>
             <TextBlock TextAlignment="Center">Side</TextBlock>
             <Button Name="AddBakedBeansButton" Click="AddBakedBeansButton_Click">Baked Beans</Button>
             <Button Name="AddChilliCheeseFriesButton" Click="AddChilliCheeseFriesButton_Click">Chilli Cheese Fries</Button>
@@ -39,12 +42,13 @@
             <Button Name="AddPanDeCampoButton" Click="AddPanDeCampoButton_Click">Pan De Campo</Button>
         </StackPanel>
         <StackPanel Grid.Column ="2">
+            <Button Name="CompleteOrder" Click="CompleteOrder_Click">Complete Order</Button>
             <TextBlock TextAlignment="Center">Drink</TextBlock>
             <Button Name="AddCowboyCoffeeButton" Click="AddCowboyCoffeeButton_Click">Cowboy Coffee</Button>
             <Button Name="AddJerkedSodaButton" Click="AddJerkedSodaButton_Click">Jerked Soda</Button>
             <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Click">Texas Tea</Button>
             <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
         </StackPanel>
-        
+        <local:OrderSummaryControl HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Grid.Column="3"></local:OrderSummaryControl>
     </Grid>
 </UserControl>

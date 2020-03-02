@@ -5,47 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="473" d:DesignWidth="250">
+             d:DesignHeight="500" d:DesignWidth="250">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="480"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="0" Grid.Row="0">
             <TextBlock TextAlignment="Center">Order</TextBlock>
-            <ListBox Name ="OrderList" Width="200" HorizontalAlignment="Left"/>
-            <ListBox Name ="OrderCost" Width="50" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+            <ListBox Name ="OrderList" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Path= Items}" Height="461">
+
+            </ListBox>
+            <ListBox Name ="OrderCost" Width="49" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path= Prices, StringFormat=c}" Height="460">
                 <ListBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="-4"/>
+                        <TranslateTransform Y="-461"/>
                     </TransformGroup>
                 </ListBox.RenderTransform>
             </ListBox>
+
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2">
             <TextBox Text="Subtotal" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="431"/>
+                        <TranslateTransform Y="0"/>
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+            <TextBox Text="{Binding Path=Subtotal, Mode= Oneway, StringFormat=c}" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" >
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="413"/>
+                        <TranslateTransform Y="-18"/>
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
         </StackPanel>
-
+        
 
 
     </Grid>

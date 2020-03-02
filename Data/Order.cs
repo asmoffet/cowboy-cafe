@@ -27,33 +27,42 @@ namespace CowboyCafe.Data
         {
             get
             {
-                double temp = 0;
-                foreach(IOrderItem Item in items)
+                double total = 0;
+                foreach(IOrderItem order in items)
                 {
-                    temp += Item.Price;
+                    total += order.Price;
                 }
-                return temp;
+                return total;
             }
+
         }
 
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
+        public IEnumerable<double> Prices => prices.ToArray();
+
+        private List<double> prices = new List<double>();
+
         
 
         public void Add(IOrderItem Item) 
         {
             items.Add(Item);
+            prices.Add(Item.Price);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
         public void Remove(IOrderItem Item) 
         {
             items.Remove(Item);
+            prices.Add(Item.Price);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
 

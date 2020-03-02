@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="489" Width="800">
+        Title="MainWindow" Height="545" Width="900">
     <Grid>
-        <local:OrderControl HorizontalAlignment="Left" Width="550"></local:OrderControl>
-        <local:OrderSummaryControl HorizontalAlignment="Right" VerticalAlignment="Top" Width="250"></local:OrderSummaryControl>
+        <local:OrderControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></local:OrderControl>
+        
     </Grid>
 </Window>
