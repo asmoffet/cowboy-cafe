@@ -16,8 +16,25 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="0" Grid.Row="0">
-            <TextBlock TextAlignment="Center">Order</TextBlock>
-            <ListBox Name ="OrderList" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Path= Items}" Height="461">
+            <TextBlock TextAlignment="Center" Width="125" HorizontalAlignment="Left">Order</TextBlock>
+            <TextBlock TextAlignment="Left" Text="{Binding Path= OrderNumber}" Width="125" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-16"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform></TextBlock>
+            <ListBox Name ="OrderList" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Path= Items}" Height="461" RenderTransformOrigin="0.5,0.5">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-16"/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
 
             </ListBox>
             <ListBox Name ="OrderCost" Width="49" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path= Prices, StringFormat=c}" Height="460">
@@ -26,7 +43,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="-461"/>
+                        <TranslateTransform Y="-477"/>
                     </TransformGroup>
                 </ListBox.RenderTransform>
             </ListBox>
@@ -54,7 +71,7 @@
                 </TextBox.RenderTransform>
             </TextBox>
         </StackPanel>
-        
+
 
 
     </Grid>

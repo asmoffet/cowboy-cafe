@@ -38,17 +38,29 @@ namespace PointOfSale
             this.DataContext = data;
         }
        
-
+        /// <summary>
+        /// item selection mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
+        /// <summary>
+        /// cancels the last order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
-
+        /// <summary>
+        /// completes the last order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
