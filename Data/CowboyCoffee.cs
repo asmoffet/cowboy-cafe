@@ -10,11 +10,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace CowboyCafe.Data
 {
     public class CowboyCoffee: Drink
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets whethre there needs to be room for cream
         /// </summary>
@@ -22,6 +23,9 @@ namespace CowboyCafe.Data
         public bool RoomForCream {
             get
             {
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 return roomForCream;
             }
             set
@@ -32,7 +36,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whether there is Ice or not
         /// </summary>
-        private bool ice = false;
+        private bool ice = true;
         public override bool Ice
         {
             get
@@ -41,6 +45,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 ice = value;
             }
         }
@@ -53,6 +59,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 decaf = value;
             }
         }
@@ -113,6 +121,10 @@ namespace CowboyCafe.Data
                 if (RoomForCream)
                 {
                     instructions.Add("Room for Cream");
+                }
+                if (Decaf)
+                {
+                    instructions.Add("Decaf");
                 }
                 return instructions;
             }

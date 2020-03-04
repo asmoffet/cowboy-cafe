@@ -10,11 +10,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger: Entree
+    public class TrailBurger: Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         private bool bun = true;
         /// <summary>
         /// if the Trailburger will have a bun
@@ -27,6 +29,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 bun = value;
             }
         }
@@ -42,6 +46,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 ketchup = value;
             }
         }
@@ -57,6 +63,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 mustard = value;
             }
         }
@@ -72,6 +80,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 pickle = value;
             }
         }
@@ -87,6 +97,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 cheese = value;
             }
         }

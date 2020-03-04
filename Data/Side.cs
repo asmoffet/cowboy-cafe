@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace CowboyCafe.Data
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Side : IOrderItem
     {
+
         /// <summary>
         /// returns an empty string
         /// </summary>

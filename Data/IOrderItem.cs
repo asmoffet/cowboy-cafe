@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public interface IOrderItem
+    public interface IOrderItem 
     {
+ 
         /// <summary>
         /// gets the list of special instructions
         /// </summary>

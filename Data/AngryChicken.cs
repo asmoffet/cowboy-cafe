@@ -10,11 +10,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class AngryChicken: Entree
+    public class AngryChicken: Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         private bool bread = true;
         /// <summary>
         /// If the chicken has bread with it
@@ -28,6 +30,8 @@ namespace CowboyCafe.Data
             set
             {
                 bread = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         private bool pickle = true;
@@ -43,6 +47,8 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
         /// <summary>

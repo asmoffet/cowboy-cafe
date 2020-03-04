@@ -10,12 +10,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     
-    public class DakotaDoubleBurger: Entree
+    public class DakotaDoubleBurger: Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         private bool bun = true;
         /// <summary>
         /// if the Dakota Double Burger will have a bun
@@ -28,6 +30,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 bun = value;
             }
         }
@@ -43,6 +47,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 ketchup = value;
             }
         }
@@ -58,6 +64,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mastard"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 mustard = value;
             }
         }
@@ -73,6 +81,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 pickle = value;
             }
         }
@@ -88,6 +98,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 cheese = value;
             }
         }
@@ -103,6 +115,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 tomato = value;
             }
         }
@@ -118,6 +132,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 lettuce = value;
             }
         }
@@ -133,6 +149,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 mayo = value;
             }
         }

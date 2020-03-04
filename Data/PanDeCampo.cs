@@ -10,11 +10,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class PanDeCampo: Side
+    public class PanDeCampo: Side, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns the calories for Pand de Campo
         /// </summary>
@@ -45,10 +47,16 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.99;
                     case Size.Medium:
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.79;
                     case Size.Small:
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");

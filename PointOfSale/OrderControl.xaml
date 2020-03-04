@@ -22,10 +22,13 @@
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
+            <local:MenuItemSelectionControl  VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
+        </Border>
         <Button Name="ItemSelection" Click="ItemSelection_Click" Grid.Row="0" Width="183" HorizontalAlignment="Left">Item Selection</Button>
         <Button Name="CancelOrder" Click="CancelOrder_Click" Grid.Row="0" Width="183" HorizontalAlignment="Center">Cancel Order</Button>
         <Button Name="CompleteOrder" Click="CompleteOrder_Click" Grid.Row="0" Width="183" HorizontalAlignment="Right">Complete Order</Button>
-        <local:MenuItemSelectionControl  VerticalAlignment="Top" Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
+
         <local:OrderSummaryControl HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Grid.Column="1" Grid.Row="1"></local:OrderSummaryControl>
     </Grid>
 </UserControl>

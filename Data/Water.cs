@@ -10,11 +10,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class Water: Drink
+    public class Water: Drink, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets whether the user wants Ice
         /// </summary>
@@ -27,6 +29,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 ice = value;
             }
         }
@@ -42,6 +46,8 @@ namespace CowboyCafe.Data
             }
             set
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 lemon = value;
             }
         }

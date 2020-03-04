@@ -45,7 +45,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
-
+            Container.Child = new MenuItemSelectionControl();
         }
         /// <summary>
         /// cancels the last order
@@ -64,6 +64,10 @@ namespace PointOfSale
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+        }
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
         }
     }
 }
