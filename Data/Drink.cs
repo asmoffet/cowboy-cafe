@@ -12,14 +12,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
-
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets any special instructions
         /// </summary>

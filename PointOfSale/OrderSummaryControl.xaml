@@ -26,27 +26,30 @@
                         <TranslateTransform Y="-16"/>
                     </TransformGroup>
                 </TextBlock.RenderTransform></TextBlock>
-            <ListBox Name ="OrderList" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Path= Items}" Height="461" RenderTransformOrigin="0.5,0.5">
-                <ListBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-16"/>
-                    </TransformGroup>
-                </ListBox.RenderTransform>
+            <Grid>
 
-            </ListBox>
-            <ListBox Name ="OrderCost" Width="49" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path= Prices, StringFormat=c}" Height="460">
-                <ListBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-477"/>
-                    </TransformGroup>
-                </ListBox.RenderTransform>
-            </ListBox>
+                    <ListBox Grid.Row="0" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" Margin="0,0,0,-445">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding}"/>
+                                    <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" TextAlignment="Right"/>
+                                    <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            
+            
 
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="2">

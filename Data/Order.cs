@@ -63,8 +63,8 @@ namespace CowboyCafe.Data
         /// stores the prices of the users order
         /// </summary>
         private List<double> prices = new List<double>();
-
         
+
         /// <summary>
         /// adds an item to the order
         /// </summary>
@@ -73,13 +73,16 @@ namespace CowboyCafe.Data
         {
             items.Add(Item);
             prices.Add(Item.Price);
+        
+            
             if (Item is INotifyPropertyChanged)
             {
                 Item.PropertyChanged += onItemChanged;
             }
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal")); 
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Instructions"));
         }
         /// <summary>
         /// removes an item from the order
@@ -89,6 +92,7 @@ namespace CowboyCafe.Data
         {
             items.Remove(Item);
             prices.Remove(Item.Price);
+            
             if (Item is INotifyPropertyChanged)
             {
                 Item.PropertyChanged -= onItemChanged;
@@ -96,6 +100,7 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Prices"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Instructions"));
         }
 
         private void onItemChanged(object sender, PropertyChangedEventArgs e)

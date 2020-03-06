@@ -5,9 +5,9 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public interface IOrderItem 
+    public interface IOrderItem : INotifyPropertyChanged
     {
- 
+    
         /// <summary>
         /// gets the list of special instructions
         /// </summary>

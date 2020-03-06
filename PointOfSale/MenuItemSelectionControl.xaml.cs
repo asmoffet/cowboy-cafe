@@ -58,11 +58,12 @@ namespace PointOfSale
         private void AddCowpokeChilliButton_Click(object sender, RoutedEventArgs e)
         {
             var ordercontrol = this.FindAncestor<OrderControl>();
+            CowpokeChili tempChili = new CowpokeChili();
             if (DataContext is Order data)
             {
-                data.Add(new CowpokeChili());
+                data.Add(tempChili);
                 var screen = new CowpokechiliCustomization();
-                screen.DataContext = new CowpokeChili();
+                screen.DataContext = tempChili;
                 ordercontrol.SwapScreen(screen);
             }
         }

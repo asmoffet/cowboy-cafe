@@ -24,5 +24,62 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>Cheese</TextBlock>
         <CheckBox IsChecked="{Binding Path= Cheese}" Grid.Row="1"/>
+        <CheckBox IsChecked="{Binding Path= GreenOnions}" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="25"/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <TextBlock Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20" Y="25"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>Green Onions</TextBlock>
+        <CheckBox IsChecked="{Binding Path= SourCream}" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="50"/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <TextBlock Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20" Y="50"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>Sour Cream</TextBlock>
+        <CheckBox IsChecked="{Binding Path= TortillaStrips}" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="75"/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <TextBlock Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20" Y="75"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>Tortilla Strips</TextBlock>
     </Grid>
 </UserControl>

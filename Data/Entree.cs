@@ -5,9 +5,9 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public abstract class  Entree : IOrderItem
+    public abstract class  Entree : IOrderItem, INotifyPropertyChanged
     {
-        
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// gets any special instructions
         /// </summary>

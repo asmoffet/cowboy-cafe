@@ -12,16 +12,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
-
+        public abstract event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// returns an empty string
         /// </summary>
