@@ -20,7 +20,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whether the user wants Ice
         /// </summary>
-        private bool ice = false;
+        private bool ice = true;
         public override bool Ice
         {
             get

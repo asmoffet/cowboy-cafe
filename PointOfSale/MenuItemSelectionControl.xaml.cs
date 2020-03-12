@@ -149,9 +149,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddCowboyCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
+            var ordercontrol = this.FindAncestor<OrderControl>();
+            CowboyCoffee tempCoffee = new CowboyCoffee();
             if (DataContext is Order data)
             {
-                data.Add(new CowboyCoffee());
+                data.Add(tempCoffee);
+                var screen = new CowboyCoffeeCustomization();
+                screen.DataContext = tempCoffee;
+                ordercontrol.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -161,9 +166,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddJerkedSodaButton_Click(object sender, RoutedEventArgs e)
         {
+            var ordercontrol = this.FindAncestor<OrderControl>();
+            JerkedSoda tempSoda = new JerkedSoda();
             if (DataContext is Order data)
             {
-                data.Add(new JerkedSoda());
+                data.Add(tempSoda);
+                var screen = new JerkedSodaCustomization();
+                screen.DataContext = tempSoda;
+                ordercontrol.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -173,9 +183,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddTexasTeaButton_Click(object sender, RoutedEventArgs e)
         {
+            var ordercontrol = this.FindAncestor<OrderControl>();
+            TexasTea tempTea = new TexasTea();
             if (DataContext is Order data)
             {
-                data.Add(new TexasTea());
+                data.Add(tempTea);
+                var screen = new TexasTeaCustomization();
+                screen.DataContext = tempTea;
+                ordercontrol.SwapScreen(screen);
             }
         }
         /// <summary>
@@ -185,9 +200,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void AddWaterButton_Click(object sender, RoutedEventArgs e)
         {
+            var ordercontrol = this.FindAncestor<OrderControl>();
+            Water tempWater = new Water();
             if (DataContext is Order data)
             {
-                data.Add(new Water());
+                data.Add(tempWater);
+                var screen = new WaterCustomization();
+                screen.DataContext = tempWater;
+                ordercontrol.SwapScreen(screen);
             }
         }
         /// <summary>
