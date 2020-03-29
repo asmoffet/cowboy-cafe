@@ -850,5 +850,103 @@ namespace CowboyCafe.DataTests.UnitTests
                 water.Lemon = false;
             });
         }
+
+
+        /// <summary>
+        /// Property Changed Tests for Order Class
+        /// </summary>
+        // Adding an Item Should Invoke PropertyChanged for Items
+        [Fact]
+        public void AddingAnItemSHouldInvokePropertyChangedForItems()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            Assert.PropertyChanged(chicken, "Items", () =>
+            {
+                order.Add(chicken);
+            });
+        }
+        // Adding an Item Should Invoke PropertyChanged for Prices
+        [Fact]
+        public void AddingAnItemSHouldInvokePropertyChangedForPrices()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            Assert.PropertyChanged(chicken, "Prices", () =>
+            {
+                order.Add(chicken);
+            });
+        }
+        // Adding an Item Should Invoke PropertyChanged for Subtotal
+        [Fact]
+        public void AddingAnItemSHouldInvokePropertyChangedForSubtotal()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            Assert.PropertyChanged(chicken, "Subtotal", () =>
+            {
+                order.Add(chicken);
+            });
+        }
+        // Adding an Item Should Invoke PropertyChanged for Instructions
+        [Fact]
+        public void AddingAnItemSHouldInvokePropertyChangedForInstructions()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            Assert.PropertyChanged(chicken, "Instructions", () =>
+            {
+                order.Add(chicken);
+            });
+        }
+
+        // Removing an Item Should Invoke PropertyChanged for Items
+        [Fact]
+        public void RemovingAnItemSHouldInvokePropertyChangedForItems()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            order.Add(chicken);
+            Assert.PropertyChanged(chicken, "Items", () =>
+            {
+                order.Remove(chicken);
+            });
+        }
+        // Removing an Item Should Invoke PropertyChanged for Prices
+        [Fact]
+        public void RemovingAnItemSHouldInvokePropertyChangedForPrices()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            order.Add(chicken);
+            Assert.PropertyChanged(chicken, "Prices", () =>
+            {
+                order.Remove(chicken);
+            });
+        }
+        // Removing an Item Should Invoke PropertyChanged for Subtotal
+        [Fact]
+        public void RemovingAnItemSHouldInvokePropertyChangedForSubtotal()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            order.Add(chicken);
+            Assert.PropertyChanged(chicken, "Subtotal", () =>
+            {
+                order.Remove(chicken);
+            });
+        }
+        // Removing an Item Should Invoke PropertyChanged for Instructions
+        [Fact]
+        public void RemovingAnItemSHouldInvokePropertyChangedForInstructions()
+        {
+            var chicken = new AngryChicken();
+            var order = new Order();
+            order.Add(chicken);
+            Assert.PropertyChanged(chicken, "Instructions", () =>
+            {
+                order.Remove(chicken);
+            });
+        }
     }
 }
