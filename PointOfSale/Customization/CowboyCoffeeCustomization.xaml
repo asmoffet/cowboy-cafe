@@ -61,6 +61,11 @@
                     <TranslateTransform X="20" Y="50"/>
                 </TransformGroup>
             </TextBlock.RenderTransform>Decaf</TextBlock>
-
+        <StackPanel Grid.Row="2">
+            <RadioButton IsChecked="{Binding Path= Size}" Checked="RadioButton_Checked">Small</RadioButton>
+            <RadioButton>Medium</RadioButton>
+            <RadioButton>Large</RadioButton>
+        </StackPanel>
+        
     </Grid>
 </UserControl>

@@ -23,8 +23,6 @@ namespace CowboyCafe.Data
         public bool RoomForCream {
             get
             {
-
-                
                 return roomForCream;
             }
             set
@@ -37,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// gets whether there is Ice or not
         /// </summary>
-        private bool ice = true;
+        private bool ice = false;
         public override bool Ice
         {
             get

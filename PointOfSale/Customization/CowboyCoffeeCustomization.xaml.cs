@@ -22,5 +22,15 @@ namespace PointOfSale.Customization
         {
             InitializeComponent();
         }
+
+        private void smallSizeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

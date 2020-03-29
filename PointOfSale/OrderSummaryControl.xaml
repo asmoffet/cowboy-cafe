@@ -28,7 +28,7 @@
                 </TextBlock.RenderTransform></TextBlock>
             <Grid>
 
-                    <ListBox Grid.Row="0" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" Margin="0,0,0,-445">
+                    <ListBox Grid.Row="0" ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" Margin="0,0,0,-445" SelectionChanged="ListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -38,11 +38,12 @@
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding}"/>
                                     <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" TextAlignment="Right"/>
                                     <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.ColumnSpan="2"/>
+                                <Button Grid.Column="1" Click="DeleteItemClick" Height="25" Width="30"> x </Button>
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

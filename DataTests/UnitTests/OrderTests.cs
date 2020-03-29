@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
-    public class OrderTests
+    public class OrderTests 
     {
-        public class MockOrderItem : IOrderItem
+        public class MockOrderItem : IOrderItem, INotifyPropertyChanged
         {
+            public event PropertyChangedEventHandler PropertyChanged;
             public double Price { get; set; }
 
             public List<string> SpecialInstructions { get; set; }
