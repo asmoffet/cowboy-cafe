@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="PointOfSale.TransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="59.67"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform X="0" Y="0"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition ColumnDefinition.Width =".5*"/>
+        </Grid.ColumnDefinitions>
+        <local:OrderSummaryControl Grid.Column="1"/>
+        <TextBox Text="{Binding Path=Total, Mode=OneWay, StringFormat=c}" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="Right" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Name="total">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-10"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox Text="Total" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1" Width="200" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-10"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+        <Button Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="25" Y="25"/>
+                </TransformGroup>
+            </Button.RenderTransform> Change Order
+        </Button>
+        <Button Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="25" X="-25"/>
+                </TransformGroup>
+            </Button.RenderTransform> Cancel Order
+        </Button>
+
+        <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="25" Y="-85"/>
+                </TransformGroup>
+            </Button.RenderTransform> Pay In Cash
+        </Button>
+        <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="25" X="25"/>
+                </TransformGroup>
+            </Button.RenderTransform> Pay With Card
+        </Button>
+        <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="25" Y="135"/>
+                </TransformGroup>
+            </Button.RenderTransform> YeeHaw
+        </Button>
+    </Grid>
+</UserControl>

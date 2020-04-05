@@ -48,6 +48,17 @@ namespace CowboyCafe.Data
 
         }
         /// <summary>
+        /// calculates the total price
+        /// </summary>
+        public double Total
+        {
+            get
+            {
+                double total = Subtotal * .16 + Subtotal;
+                return total;
+            }
+        }
+        /// <summary>
         /// sends the list of items to an array
         /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
