@@ -57,7 +57,7 @@ namespace PointOfSale
                 {
                     orderItems[i] = ordercontrol.OrderControlOrderSummaryControl.ListBoxSummary.Items[i].ToString();
                 }
-                int ordernumber = Convert.ToInt32(ordercontrol.OrderControlOrderSummaryControl.OrderNumber.ToString());
+                string ordernumber = ordercontrol.OrderControlOrderSummaryControl.OrderNumber.ToString();
                 double subtotal = Convert.ToDouble(Sub.Text.ToString());
 
                 ReceiptPrinter rp = new ReceiptPrinter();
@@ -85,7 +85,7 @@ namespace PointOfSale
 
         }
 
-        private string PrintCredit(double total, double subtotal, int orderNumber, string[] order)
+        private string PrintCredit(double total, double subtotal, string orderNumber, string[] order)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(String.Format("Order Number: {0} \n",orderNumber));
@@ -99,20 +99,11 @@ namespace PointOfSale
             sb.Append(String.Format("Order Subtotal: {0} \nOrder Total: {1}", subtotal, total));
             return sb.ToString();
         }
-        private string PrintCash(double total, double subtotal, int orderNumber, string[] order, double cash)
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            double change = cash - total;
-            sb.Append(String.Format("Order Number: {0} \n", orderNumber));
-            sb.Append(String.Format("Date: {0}\n", DateTime.Now));
-            sb.Append("Items:\n");
-            foreach (string s in order)
-            {
-                sb.Append(s);
-                sb.Append("\n");
-            }
-            sb.Append(String.Format("Order Subtotal: {0} \nOrder Total: {1} \nChange: {2}", subtotal, total, change));
-            return sb.ToString();
+            var ordercontrol = this.FindAncestor<OrderControl>();
+            ordercontrol.SwapScreen(new CashRegisterControl());
         }
     }
 }

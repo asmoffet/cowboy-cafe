@@ -57,7 +57,7 @@
             </Button.RenderTransform> Change Order
         </Button>
 
-        <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+        <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Click="Button_Click_3">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

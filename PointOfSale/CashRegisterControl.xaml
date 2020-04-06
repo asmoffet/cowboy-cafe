@@ -23,16 +23,67 @@
             <local:BillControl Denominations="Twenty" Quantities="{Binding Path= Twenties}"/>
             <local:BillControl Denominations="Fifty" Quantities="{Binding Path= Fifties}"/>
             <local:BillControl Denominations="Hundred" Quantities="{Binding Path= Hundreds}"/>
+            <TextBlock RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="10"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>Total</TextBlock>
+            
+            <TextBox Text="{Binding Path=Total, Mode=OneWay, StringFormat=c}" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="10"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
         </StackPanel>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="2">
             <local:CoinControl Denomination="Penny" Quantity="{Binding Path=Pennies}"/>
             <local:CoinControl Denomination="Nickel" Quantity="{Binding Path= Nickels}"/>
             <local:CoinControl Denomination="Dime" Quantity="{Binding Path=Dimes}"/>
+            <TextBlock RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="10"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>Remainder Owed</TextBlock>
+            <TextBox Text="{Binding Path=drawerExcess}" RenderTransformOrigin="0.5,0.5" Name="Owed">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="10"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
         </StackPanel>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="3">
             <local:CoinControl Denomination="Quarter" Quantity="{Binding Path=Quarters}"/>
             <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollars}"/>
             <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
+            <Button x:Name="end" RenderTransformOrigin="0.5,0.5" Click="end_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="15"/>
+                    </TransformGroup>
+                </Button.RenderTransform> Finish Payment
+            </Button>
         </StackPanel>
+        <TextBlock Text="{Binding Path=Total}" Visibility="Hidden" Name="Tot"/>
+        <TextBlock Text="{Binding Path=Subtotal, Mode=OneWay}" Visibility="Hidden" Name="Sub"/>
     </Grid>
 </UserControl>
