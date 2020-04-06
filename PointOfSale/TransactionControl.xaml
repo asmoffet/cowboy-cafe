@@ -23,7 +23,7 @@
         </Grid.RenderTransform>
         
         
-        <TextBlock Text="{Binding Path=Total, Mode=OneWay}" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="right" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Name="Sum">
+        <TextBlock Text="{Binding Path=Total, Mode=OneWay, StringFormat=c}" VerticalAlignment="Bottom" Width="50" HorizontalAlignment="right" Grid.Column="1" RenderTransformOrigin="0.5,0.5" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,6 +33,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
+        <TextBlock Text="{Binding Path=Total, Mode=OneWay}" Visibility="Hidden" Name="Sum"/>
         <TextBox Text="Total" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Width="200" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
                 <TransformGroup>
@@ -85,5 +86,6 @@
                 </TransformGroup>
             </Button.RenderTransform> YeeHaw
         </Button>
+        
     </Grid>
 </UserControl>
