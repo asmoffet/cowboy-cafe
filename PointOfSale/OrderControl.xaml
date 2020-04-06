@@ -29,6 +29,6 @@
         <Button Name="CancelOrder" Click="CancelOrder_Click" Grid.Row="0" Width="183" HorizontalAlignment="Center">Cancel Order</Button>
         <Button Name="CompleteOrder" Click="CompleteOrder_Click" Grid.Row="0" Width="183" HorizontalAlignment="Right">Complete Order</Button>
 
-        <local:OrderSummaryControl HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Grid.Column="1" Grid.Row="1"></local:OrderSummaryControl>
+        <local:OrderSummaryControl HorizontalAlignment="Right" VerticalAlignment="Top" Width="250" Grid.Column="1" Grid.Row="1" x:Name="OrderControlOrderSummaryControl"></local:OrderSummaryControl>
     </Grid>
 </UserControl>

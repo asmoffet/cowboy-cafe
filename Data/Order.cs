@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using CashRegister;
 
 namespace CowboyCafe.Data
 {
     public class Order : INotifyPropertyChanged
     {
+        public CashDrawer cashDrawer = new CashDrawer();
         /// <summary>
         /// and event handler for when properties change
         /// </summary>

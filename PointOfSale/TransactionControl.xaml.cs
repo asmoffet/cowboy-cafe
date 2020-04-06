@@ -22,6 +22,7 @@ namespace PointOfSale
     /// </summary>
     public partial class TransactionControl : UserControl
     {
+        
         public TransactionControl()
         {
             InitializeComponent();
@@ -29,7 +30,8 @@ namespace PointOfSale
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var ordercontrol = this.FindAncestor<OrderControl>();
+            ordercontrol.SwapScreen(new MenuItemSelectionControl());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -42,13 +44,18 @@ namespace PointOfSale
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             CardTerminal readCard = new CardTerminal();
-            double totalPrice = Convert.ToDouble(total.Text.ToString());
+
+            double totalPrice = Convert.ToDouble(Sum.Text.ToString());
+            
+            
             string read = readCard.ProcessTransaction(totalPrice).ToString();
             if (read == "Success")
             {
                 //print receipt
+                
                 var ordercontrol = this.FindAncestor<OrderControl>();
-                ordercontrol.SwapScreen(new MainWindow());
+                ordercontrol.SwapScreen(new MenuItemSelectionControl());
+                ordercontrol.DataContext = new Order();
             }
             if(read == "InsufficientFunds")
             {

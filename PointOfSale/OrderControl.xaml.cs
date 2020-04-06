@@ -20,15 +20,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CashRegister;
 
 namespace PointOfSale
 {
+    
     /// <summary>
     /// Interaction logic for OrderControl.xaml
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        
+        public CashDrawer cashDrawer = new CashDrawer();
         public OrderControl()
         {
 
@@ -55,6 +57,7 @@ namespace PointOfSale
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();
         }
         /// <summary>
         /// completes the last order
@@ -63,7 +66,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            Container.Child = new TransactionControl();
         }
         public void SwapScreen(FrameworkElement element)
         {
