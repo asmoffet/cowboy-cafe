@@ -27,21 +27,23 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// goes back to the menu incase the user needs to add anything else
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Change_Click(object sender, RoutedEventArgs e)
         {
             var ordercontrol = this.FindAncestor<OrderControl>();
             ordercontrol.SwapScreen(new MenuItemSelectionControl());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = new Order();
-            var ordercontrol = this.FindAncestor<OrderControl>();
-            ordercontrol.SwapScreen(new MainWindow());
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// paying with credit card
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Card_Click(object sender, RoutedEventArgs e)
         {
             CardTerminal readCard = new CardTerminal();
 
@@ -84,7 +86,14 @@ namespace PointOfSale
             }
 
         }
-
+        /// <summary>
+        /// putting the information into a string to be printed 
+        /// </summary>
+        /// <param name="total">the total price of the order</param>
+        /// <param name="subtotal">the subtotal price of the order</param>
+        /// <param name="orderNumber">the order number</param>
+        /// <param name="order">the order items</param>
+        /// <returns></returns>
         private string PrintCredit(double total, double subtotal, string orderNumber, string[] order)
         {
             StringBuilder sb = new StringBuilder();
@@ -99,8 +108,12 @@ namespace PointOfSale
             sb.Append(String.Format("Order Subtotal: {0} \nOrder Total: {1}", subtotal, total));
             return sb.ToString();
         }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// moves over to paying with cash
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cash_Click(object sender, RoutedEventArgs e)
         {
             var ordercontrol = this.FindAncestor<OrderControl>();
             ordercontrol.SwapScreen(new CashRegisterControl());

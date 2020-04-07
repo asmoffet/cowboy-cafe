@@ -26,7 +26,11 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// the click event for cash payment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void end_Click(object sender, RoutedEventArgs e)
         {
             double price = Convert.ToDouble(Tot.Text.ToString());
@@ -151,6 +155,12 @@ namespace PointOfSale
             rp.Print(PrintCash(payment, subtotal, ordernumber, orderItems, payment));
             oc.SwapScreen(new MainWindow());
         }
+        /// <summary>
+        /// A helper method to  put the amount of bills an coins needed to be dispensed 
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private string WhatToPay(int amount, string type)
         {
             if(amount != 0)
@@ -159,6 +169,15 @@ namespace PointOfSale
             }
             return "";
         }
+        /// <summary>
+        /// a string that puts all of the information into a string for printing a reciept
+        /// </summary>
+        /// <param name="total">the total cost of the bill</param>
+        /// <param name="subtotal">the subtotal of the bill</param>
+        /// <param name="orderNumber">the order number</param>
+        /// <param name="order">the information on the order</param>
+        /// <param name="cash">the amount of cash given</param>
+        /// <returns></returns>
         private string PrintCash(double total, double subtotal, string orderNumber, string[] order, double cash)
         {
             StringBuilder sb = new StringBuilder();
