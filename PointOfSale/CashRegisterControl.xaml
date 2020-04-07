@@ -84,6 +84,6 @@
             </Button>
         </StackPanel>
         <TextBlock Text="{Binding Path=Total}" Visibility="Hidden" Name="Tot"/>
-        <TextBlock Text="{Binding Path=Subtotal, Mode=OneWay}" Visibility="Hidden" Name="Sub"/>
+        <TextBlock Text="{Binding Path=Subtotal}" Visibility="Hidden" Name="Sub"/>
     </Grid>
 </UserControl>

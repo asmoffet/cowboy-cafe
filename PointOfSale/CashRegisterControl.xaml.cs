@@ -144,7 +144,7 @@ namespace PointOfSale
             {
                 orderItems[i] = oc.OrderControlOrderSummaryControl.ListBoxSummary.Items[i].ToString();
             }
-            int ordernumber = Convert.ToInt32(oc.OrderControlOrderSummaryControl.OrderNumber.ToString());
+            string ordernumber = oc.OrderControlOrderSummaryControl.OrderNumber.ToString();
             double subtotal = Convert.ToDouble(Sub.Text.ToString());
 
             ReceiptPrinter rp = new ReceiptPrinter();
@@ -159,7 +159,7 @@ namespace PointOfSale
             }
             return "";
         }
-        private string PrintCash(double total, double subtotal, int orderNumber, string[] order, double cash)
+        private string PrintCash(double total, double subtotal, string orderNumber, string[] order, double cash)
         {
             StringBuilder sb = new StringBuilder();
             double change = cash - total;
