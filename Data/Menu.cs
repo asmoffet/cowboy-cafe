@@ -43,7 +43,21 @@ namespace CowboyCafe.Data
         {
             List<IOrderItem> menu = new List<IOrderItem>();
             IEnumerable<IOrderItem> entrees = Entrees();
-           
+            IEnumerable<IOrderItem> sides = Sides();
+            IEnumerable<IOrderItem> drinks = Drinks();
+            foreach(IOrderItem entree in entrees)
+            {
+                menu.Add(entree);
+            }
+            foreach(IOrderItem side in sides)
+            {
+                menu.Add(side);
+            }
+            foreach(IOrderItem drink in drinks)
+            {
+                menu.Add(drink);
+            }
+            return menu;
         }
     }
 }

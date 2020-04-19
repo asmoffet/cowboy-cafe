@@ -8,4 +8,41 @@
 
 <h1>Cowboy Cafe</h1>
 <p>We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.</p>
+<h2>
+    Entrees
+    @foreach (IOrderItem entree in Menu.Entrees())
+    {
+        <li>
+            <div class="details">
+                <h3 class="item">@entree.ToString()</h3>
+                <div class="price">Price: @entree.Price</div>
+                <div class="calories">Calories: @entree.Calories</div>
+            </div>
+        </li>
+    }
+
+    Sides
+    @foreach (IOrderItem side in Menu.Sides())
+    {
+        <li>
+            <div class="details">
+                <h3 class="item">@side.ToString()</h3>
+                <div class="price">Price: @side.Price</div>
+                <div class="calories">Calories: @side.Calories</div>
+            </div>
+        </li>
+    }
+
+    Drinks
+    @foreach (IOrderItem drink in Menu.Drinks())
+    {
+        <li>
+            <div class="details">
+                <h3 class="item">@drink.ToString()</h3>
+                <div class="price">Price: @drink.Price</div>
+                <div class="calories">Calories: @drink.Calories</div>
+            </div>
+        </li>
+    }
+</h2>
 
