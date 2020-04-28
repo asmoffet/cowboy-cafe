@@ -42,9 +42,17 @@ namespace Website.Pages
         /// the maximum desired calories
         /// </summary>
         public int? calMax { get; set; }
-
+        /// <summary>
+        /// the types of entrees
+        /// </summary>
         public string[] types { get; set; }
-
+        /// <summary>
+        /// the update for what to display on the razor page
+        /// </summary>
+        /// <param name="priceMin">the minimun search price</param>
+        /// <param name="priceMax">the maximum search price</param>
+        /// <param name="calMin">the minimum calorie amount</param>
+        /// <param name="calMax">the maximum calorie amount</param>
         public void OnGet(double? priceMin, double? priceMax, int? calMin, int? calMax)
         {
             SearchTerms = Request.Query["SearchTerms"];

@@ -205,7 +205,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// filters the items by their price
+        /// filters the items by their calories
         /// </summary>
         /// <param name="items">the list of items</param>
         /// <param name="min">minimum Calories</param>
