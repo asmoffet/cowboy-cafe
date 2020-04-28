@@ -10,6 +10,10 @@ namespace CowboyCafe.DataTests.UnitTests
 {
     public class MenuTests
     {
+        /// <summary>
+        /// this section tests the lists of entrees, sides, drinks, and the complete menu
+        /// </summary>
+
         //entrees should have seven items
         [Fact]
         public void EntreesShouldHaveOnlySevenItems()
@@ -120,6 +124,12 @@ namespace CowboyCafe.DataTests.UnitTests
             Assert.Contains(type, types);
         }
 
+
+        /// <summary>
+        /// This section tests the search bar feature
+        /// </summary>
+
+
         //searching with null should return the complete menu
         [Theory]
         [InlineData(typeof(AngryChicken))]
@@ -161,6 +171,12 @@ namespace CowboyCafe.DataTests.UnitTests
             Assert.Contains(type, types);
         }
 
+
+        /// <summary>
+        /// This section covers the filter check boxes for entrees, sides and drinks
+        /// </summary>
+
+
         //with complete menue entree filter should return only entrees
         [Theory]
         [InlineData(typeof(AngryChicken))]
@@ -185,7 +201,7 @@ namespace CowboyCafe.DataTests.UnitTests
             Assert.Contains(type, types);
         }
 
-        //with complete menue Sides filter should return only entrees
+        //with complete menue Sides filter should return only Sides
         [Theory]
         [InlineData(typeof(ChiliCheeseFries))]
         [InlineData(typeof(BakedBeans))]
@@ -206,7 +222,7 @@ namespace CowboyCafe.DataTests.UnitTests
             Assert.Contains(type, types);
         }
 
-        //with complete menue Drinks filter should return only entrees
+        //with complete menue Drinks filter should return only Drinks
         [Theory]
         [InlineData(typeof(CowboyCoffee))]
         [InlineData(typeof(JerkedSoda))]
@@ -245,26 +261,196 @@ namespace CowboyCafe.DataTests.UnitTests
             Assert.Contains(type, types);
         }
 
+
+        /// <summary>
+        /// This section covers filtering by Calories and Price
+        /// </summary>
+
+
         //filtering with null should return the same list (price)
+        [Theory]
+        [InlineData(typeof(CowboyCoffee))]
+        [InlineData(typeof(JerkedSoda))]
+        [InlineData(typeof(TexasTea))]
+        [InlineData(typeof(Water))]
+        public void FilteringNullShouldReturnTheSameListForPrice(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = Menu.Drinks();
+            foreach (IOrderItem item in Menu.FilterItemsByPrice(drinks, null, null))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
+
 
         //filtering with null max should return all less (price)
+        [Theory]
+        [InlineData(typeof(ChiliCheeseFries))]
+        public void FilteringWithNullMaxShouldReturnAllLessForPrice(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = new List<IOrderItem>();
+            drinks.Add(new ChiliCheeseFries());
+            drinks.Add(new BakedBeans());
+            drinks.Add(new PanDeCampo());
+            drinks.Add(new CornDodgers());
+            foreach (IOrderItem item in Menu.FilterItemsByPrice(drinks, 1.60, null))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
         //filtering with null min hould return all more (price)
+        [Theory]
+        [InlineData(typeof(BakedBeans))]
+        [InlineData(typeof(PanDeCampo))]
+        [InlineData(typeof(CornDodgers))]
+        public void FilteringWithNullMinShouldReturnAllLessForPrice(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = new List<IOrderItem>();
+            drinks.Add(new ChiliCheeseFries());
+            drinks.Add(new BakedBeans());
+            drinks.Add(new PanDeCampo());
+            drinks.Add(new CornDodgers());
+            foreach (IOrderItem item in Menu.FilterItemsByPrice(drinks, null, 1.60))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
         //filtering by price should return items within that price range
+        [Theory]
+        [InlineData(typeof(BakedBeans))]
+        [InlineData(typeof(PanDeCampo))]
+        [InlineData(typeof(CornDodgers))]
+        public void FilteringByPriceShouldReturnAllInRange(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = new List<IOrderItem>();
+            drinks.Add(new ChiliCheeseFries());
+            drinks.Add(new BakedBeans());
+            drinks.Add(new PanDeCampo());
+            drinks.Add(new CornDodgers());
+            foreach (IOrderItem item in Menu.FilterItemsByPrice(drinks, 1.49, 1.70))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
         //filtering with price should retain the search query
+        [Theory]
+        [InlineData(typeof(CornDodgers))]
+        public void FilteringByPriceShouldRetainTheSearchQuery(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = Menu.Search("Co");
+            var cat = new List<string>();
+            cat.Add("side");
+            drinks = Menu.filterByType(cat, drinks);
 
+            foreach (IOrderItem item in Menu.FilterItemsByPrice(drinks, 1.49, 1.70))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
 
         //filtering with null should return the same list (calories)
+        [Theory]
+        [InlineData(typeof(CowboyCoffee))]
+        [InlineData(typeof(JerkedSoda))]
+        [InlineData(typeof(TexasTea))]
+        [InlineData(typeof(Water))]
+        public void FilteringNullShouldReturnTheSameListForCalories(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = Menu.Drinks();
+            foreach (IOrderItem item in Menu.FilterItemsByCalories(drinks, null, null))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
-        //filtering with null max should return all less (calories)
+        //filtering with null min should return all less (calories)
+        [Theory]
+        [InlineData(typeof(BakedBeans))]
+        [InlineData(typeof(PanDeCampo))]
+        public void FilteringWithNullMinShouldReturnAllLessForCalories(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = new List<IOrderItem>();
+            drinks.Add(new ChiliCheeseFries());
+            drinks.Add(new BakedBeans());
+            drinks.Add(new PanDeCampo());
+            drinks.Add(new CornDodgers());
+            foreach (IOrderItem item in Menu.FilterItemsByCalories(drinks, null, 400))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
-        //filtering with null min hould return all more (calories)
+        //filtering with null max hould return all more (calories)
+        [Theory]
+        [InlineData(typeof(ChiliCheeseFries))]
+        [InlineData(typeof(CornDodgers))]
+        public void FilteringWithNullMaxShouldReturnAllLessForCalories(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = new List<IOrderItem>();
+            drinks.Add(new ChiliCheeseFries());
+            drinks.Add(new BakedBeans());
+            drinks.Add(new PanDeCampo());
+            drinks.Add(new CornDodgers());
+            foreach (IOrderItem item in Menu.FilterItemsByCalories(drinks, 400, null))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
 
         //filtering with calories should return items within that range
-
+        [Theory]
+        [InlineData(typeof(BakedBeans))]
+        [InlineData(typeof(ChiliCheeseFries))]
+        public void FilteringByPriceShouldReturnAllInRangeForCalories(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = new List<IOrderItem>();
+            drinks.Add(new ChiliCheeseFries());
+            drinks.Add(new BakedBeans());
+            drinks.Add(new PanDeCampo());
+            drinks.Add(new CornDodgers());
+            foreach (IOrderItem item in Menu.FilterItemsByCalories(drinks, 300, 500))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
         //filtering with calories should retain the search query
+        [Theory]
+        [InlineData(typeof(CornDodgers))]
+        public void FilteringByPriceShouldRetainTheSearchQueryForCalories(Type type)
+        {
+            var types = new List<Type>();
+            var drinks = Menu.Search("Co");
+            var cat = new List<string>();
+            cat.Add("side");
+            drinks = Menu.filterByType(cat, drinks);
+
+            foreach (IOrderItem item in Menu.FilterItemsByCalories(drinks, 450, 530))
+            {
+                types.Add(item.GetType());
+            }
+            Assert.Contains(type, types);
+        }
     }
 }
