@@ -63,11 +63,78 @@ namespace Website.Pages
             this.calMax = calMax;
             this.calMin = calMin;
 
+            /*
             Items = Menu.Search(SearchTerms);
             Items = Menu.filterByType(types, Items);
             Items = Menu.FilterItemsByPrice(Items, priceMin, priceMax);
             Items = Menu.FilterItemsByCalories(Items, calMin, calMax);
-            
+            */
+            Items = Menu.CompleteMenu();
+            //filter through searching
+            if(SearchTerms != null)
+            {
+                Items = Items.Where(item => item.ToString() != null && item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
+
+            //filter by type
+            if(types != null)
+            {
+                if (types.Contains("entree") && types.Contains("side") && types.Contains("drink"))
+                {
+                    Items = Items.Where(item => item is Entree || item is Side || item is Drink);
+                }
+                else if (types.Contains("entree") && types.Contains("side"))
+                {
+                    Items = Items.Where(item => item is Entree || item is Side);
+                }
+                else if (types.Contains("entree") && types.Contains("drink"))
+                {
+                    Items = Items.Where(item => item is Entree || item is Drink);
+                }
+                else if (types.Contains("side") && types.Contains("drink"))
+                {
+                    Items = Items.Where(item => item is Drink || item is Side);
+                }
+                else if (types.Contains("entree"))
+                {
+                    Items = Items.Where(item => item is Entree);
+                }
+                else if (types.Contains("side"))
+                {
+                    Items = Items.Where(item => item is Side);
+                }
+                else if (types.Contains("drink"))
+                {
+                    Items = Items.Where(item => item is Drink);
+                }
+            }
+            //checking price
+            if(priceMax != null && priceMin != null)
+            {
+                Items = Items.Where(item => item.Price >= priceMin && item.Price <= priceMax);
+            }
+            if (priceMax != null)
+            {
+                Items = Items.Where(item => item.Price <= priceMax);
+            }
+            if (priceMin != null)
+            {
+                Items = Items.Where(item => item.Price >= priceMin);
+            }
+            //checking calories
+            if (calMax != null && calMin != null)
+            {
+                Items = Items.Where(item => item.Calories >= calMin && item.Calories <= calMax);
+            }
+            if (calMax != null)
+            {
+                Items = Items.Where(item => item.Calories <= calMax);
+            }
+            if (calMin != null)
+            {
+                Items = Items.Where(item => item.Calories >= calMin);
+            }
+
         }
     }
 }
